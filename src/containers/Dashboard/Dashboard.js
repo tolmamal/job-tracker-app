@@ -14,14 +14,17 @@ import { saveUserCompanies, saveUserApplications } from '../../store/actions/use
 import {
     ExpansionPanel, ExpansionPanelDetails, ExpansionPanelSummary, ExpansionPanelActions
 } from "@material-ui/core";
-import { Chip } from "@material-ui/core";
-import { CalendarToday } from "@material-ui/icons";
 import { Typography } from "../../utils/Material-UI/components";
 import { ExpandMore } from "@material-ui/icons";
 import clsx from 'clsx';
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+// import moment from 'moment';
+
+import Moment from 'moment';
+import { extendMoment } from "moment-range";
+const moment = extendMoment(Moment);
 
 
 
@@ -124,12 +127,17 @@ const Dashboard = () => {
     const [openJobAdd, setOpenJobAdd] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
-
+    const [expanded, setExpanded] = useState(false);
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
     const auth = useSelector((state) => state.auth);
     const {user: {user: {uid} = {}}} = auth;
+
+    const handlePanel = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+
+    };
 
     const handleStartDateChange = (date) => {
         setStartDate(new Date(date));
@@ -189,29 +197,39 @@ const Dashboard = () => {
         });
     };
 
-    // feature in progress
-    const applyTimeFilter = () => {
-        console.log("applyTimeFilter");
-        const filteredApps = [];
+    // TODO: if itemsInRange is empty, take care of other display of empty board!
+    const handleTimeFilter = () => {
+        const itemsInRange = [];
         const {applications = {}} = user;
-        applications.map(item => {
-            let currentDate = new Date(item.time);
-            // if (currentDate >= startDate && currentDate <= endDate) {
-            //     filteredApps.push(item);
-            // }
 
+        const minDate = startDate.setHours(0,0,0);
+        const maxDate = endDate.setHours(0,0,0);
+        const range = moment.range(minDate, maxDate);
+
+        applications.map((item) => {
+            const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
+            if (range.contains(currentDate)) {
+                itemsInRange.push(item);
+            }
         });
+
+        setExpanded(false);
+        const parsedData = parseApplicationData(itemsInRange);
+        setBoardData(parsedData);
+
+
     };
+
 
     return (
         <div>
             <NavBar>
                 <div className={classes.timeFilterPanel}>
-                    <ExpansionPanel>
+                    <ExpansionPanel expanded={expanded === 'panel1'} onChange={handlePanel('panel1')}>
                         <ExpansionPanelSummary
                             expandIcon={<ExpandMore />}
-                            aria-controls="panel1c-content"
-                            id="panel1c-header"
+                            aria-controls="panel1-content"
+                            id="panel1-header"
                         >
                             <div className={classes.column}>
                                 <Typography>Date Range Filter</Typography>
@@ -265,8 +283,8 @@ const Dashboard = () => {
                         </ExpansionPanelDetails>
                         <Divider />
                         <ExpansionPanelActions>
-                            <Button size="small" color="black">Cancel</Button>
-                            <Button size="small" color="primary" onClick={applyTimeFilter}>
+                            <Button size="small" color="black" onClick={handlePanel('panel10')}>Cancel</Button>
+                            <Button size="small" color="primary" onClick={handleTimeFilter}>
                                 Save
                             </Button>
                         </ExpansionPanelActions>
@@ -296,6 +314,8 @@ const Dashboard = () => {
             />
         </div>
     );
+
+
 };
 
 
