@@ -12,8 +12,6 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import UserAnalysis from './containers/UserAnalysis/UserAnalysis';
 import { makeStyles } from "@material-ui/core/styles";
 
-import { createBrowserHistory } from 'history';
-const history = createBrowserHistory();
 
 const useStyles = makeStyles(() => ({
   app: {
@@ -34,7 +32,7 @@ function AppRouter () {
   const { isAuthenticated, isVerifying } = auth;
 
   return (
-      <Router history={history}>
+      <Router>
         <div className={classes.app}>
           <Switch>
             <Route exact path="/" component={HomePage}/>

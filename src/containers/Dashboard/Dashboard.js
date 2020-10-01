@@ -141,7 +141,6 @@ const Dashboard = () => {
     const {user: {user: {uid} = {}}} = auth;
 
 
-
     const handlePanel = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
 
@@ -188,7 +187,7 @@ const Dashboard = () => {
     };
 
     useEffect(() => {
-        console.log("Dashboard - useEffect()");
+
         getJobApplications();
 
     }, []);

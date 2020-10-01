@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import APIService from '../../utils/service/APIService';
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../store/actions";
 import { makeStyles } from '../../utils/Material-UI/import';
@@ -15,8 +14,6 @@ import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import { AssessmentOutlined } from "@material-ui/icons";
 import ExitToAppOutlined from '@material-ui/icons/ExitToAppOutlined';
 import WorkIcon from "@material-ui/icons/Work";
-import { Apple } from "@material-ui/icons";
-import { Apps } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     nav: {
