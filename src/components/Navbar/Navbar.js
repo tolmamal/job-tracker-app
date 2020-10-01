@@ -110,12 +110,6 @@ const NavBar = props => {
                         icon={<ExitToAppOutlined />}
                     />
                 </List>
-                <ListItemWithLink
-                    primary="Test"
-                    to="/verified"
-                    textOverrideClass={{ primary: classes.textStyle }}
-                    icon={<Apple />}
-                />
             </nav>
             <div className={classes.container}>
                 {children}
