@@ -131,6 +131,7 @@ const Dashboard = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [expanded, setExpanded] = useState(false);
+    window.location.reload();
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
