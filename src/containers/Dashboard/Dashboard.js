@@ -20,7 +20,7 @@ import clsx from 'clsx';
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
-// import moment from 'moment';
+import { Link } from "@material-ui/core";
 
 import Moment from 'moment';
 import { extendMoment } from "moment-range";
@@ -87,6 +87,11 @@ const useStyles = makeStyles((theme) => ({
     },
     panel: {
         height: '9vh'
+    },
+    link: {
+        '& > * + *': {
+            marginLeft: theme.spacing(2),
+        },
     }
 }));
 
@@ -136,6 +141,7 @@ const Dashboard = () => {
     const user = useSelector((state) => state.user);
     const auth = useSelector((state) => state.auth);
     const {user: {user: {uid} = {}}} = auth;
+
 
     const handlePanel = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
@@ -220,6 +226,8 @@ const Dashboard = () => {
         const parsedData = parseApplicationData(itemsInRange);
         setBoardData(parsedData);
     };
+
+    const preventDefault = (event) => event.preventDefault();
 
     return (
         <div>
@@ -315,8 +323,6 @@ const Dashboard = () => {
             />
         </div>
     );
-
-
 };
 
 

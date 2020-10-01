@@ -15,6 +15,7 @@ import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import { AssessmentOutlined } from "@material-ui/icons";
 import ExitToAppOutlined from '@material-ui/icons/ExitToAppOutlined';
 import WorkIcon from "@material-ui/icons/Work";
+import { Apple } from "@material-ui/icons";
 import { Apps } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -109,6 +110,12 @@ const NavBar = props => {
                         icon={<ExitToAppOutlined />}
                     />
                 </List>
+                <ListItemWithLink
+                    primary="Test"
+                    to="/verified"
+                    textOverrideClass={{ primary: classes.textStyle }}
+                    icon={<Apple />}
+                />
             </nav>
             <div className={classes.container}>
                 {children}

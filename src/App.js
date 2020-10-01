@@ -8,6 +8,7 @@ import Signup from './containers/Registresion/Signup/Signup';
 import ViewJob from './containers/ViewJob/ViewJob';
 import AccountInfo from './components/Account/AccountInfo';
 import ProZone from './containers/ProZone/ProZone';
+import TestContainer from './containers/TestContainer/TestContainer';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import UserAnalysis from './containers/UserAnalysis/UserAnalysis';
 import { makeStyles } from "@material-ui/core/styles";
@@ -29,6 +30,13 @@ function AppRouter () {
   const classes = useStyles();
   const auth = useSelector(state => state.auth);
   const { isAuthenticated, isVerifying } = auth;
+
+  const VerifiedContainer = () => (
+      <ProtectedRoute>
+        <TestContainer />
+      </ProtectedRoute>
+  );
+
   return (
       <Router>
         <div className={classes.app}>
@@ -41,6 +49,7 @@ function AppRouter () {
             <Route path="/account" component={AccountInfo} />
             <Route path="/analysis" component={UserAnalysis} />
             <Route path="/pro-zone" component={ProZone} />
+            <Route path="/verified" component={VerifiedContainer} />
           </Switch>
         </div>
       </Router>
