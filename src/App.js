@@ -12,6 +12,9 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import UserAnalysis from './containers/UserAnalysis/UserAnalysis';
 import { makeStyles } from "@material-ui/core/styles";
 
+import { createBrowserHistory } from 'history';
+const history = createBrowserHistory();
+
 const useStyles = makeStyles(() => ({
   app: {
     fontSize: '16px',
@@ -31,7 +34,7 @@ function AppRouter () {
   const { isAuthenticated, isVerifying } = auth;
 
   return (
-      <Router>
+      <Router history={history}>
         <div className={classes.app}>
           <Switch>
             <Route exact path="/" component={HomePage}/>
