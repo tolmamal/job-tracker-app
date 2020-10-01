@@ -9,16 +9,17 @@ Control of submitting resumes for jobs, interviews and more.
 so there may be bugs, I would love if you would report any bugs you encountered while 
 using the app.
 
-
-
 ## Tech
 * React
 * Redux
-* Material UI
 * React Hooks
 * Firebase
 
+## UI Framework
+* Material UI
 
+## Packages
+* react-trello
 
 
 ## DEPLOY ##

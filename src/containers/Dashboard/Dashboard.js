@@ -219,10 +219,7 @@ const Dashboard = () => {
         setExpanded(false);
         const parsedData = parseApplicationData(itemsInRange);
         setBoardData(parsedData);
-
-
     };
-
 
     return (
         <div>
