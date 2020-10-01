@@ -85,6 +85,9 @@ const useStyles = makeStyles((theme) => ({
         borderLeft: `2px solid ${theme.palette.divider}`,
         padding: theme.spacing(1, 2),
     },
+    panel: {
+        height: '9vh'
+    }
 }));
 
 const getLane = (lanes, status) => {
@@ -227,6 +230,7 @@ const Dashboard = () => {
                 <div className={classes.timeFilterPanel}>
                     <ExpansionPanel expanded={expanded === 'panel1'} onChange={handlePanel('panel1')}>
                         <ExpansionPanelSummary
+                            className={classes.panel}
                             expandIcon={<ExpandMore />}
                             aria-controls="panel1-content"
                             id="panel1-header"
