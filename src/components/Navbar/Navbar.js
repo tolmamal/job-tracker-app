@@ -14,7 +14,6 @@ import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import { AssessmentOutlined } from "@material-ui/icons";
 import ExitToAppOutlined from '@material-ui/icons/ExitToAppOutlined';
 import WorkIcon from "@material-ui/icons/Work";
-import { Email } from '@material-ui/icons;'
 
 const useStyles = makeStyles((theme) => ({
     nav: {
@@ -102,12 +101,12 @@ const NavBar = props => {
                         icon={<SettingsOutlinedIcon />}
                     />
 
-                    <ListItemWithLink
-                        primary="Send Mail"
-                        to="/send-mail"
-                        textOverrideClass={{ primary: classes.textStyle }}
-                        icon={<Email />}
-                    />
+                    {/*<ListItemWithLink*/}
+                    {/*    primary="Send Mail"*/}
+                    {/*    to="/send-mail"*/}
+                    {/*    textOverrideClass={{ primary: classes.textStyle }}*/}
+                    {/*    icon={<Email />}*/}
+                    {/*/>*/}
 
                     <ListItemWithClick
                         primary="Logout"
