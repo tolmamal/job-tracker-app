@@ -10,6 +10,7 @@ import AccountInfo from './components/Account/AccountInfo';
 import ProZone from './containers/ProZone/ProZone';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import UserAnalysis from './containers/UserAnalysis/UserAnalysis';
+import Mail from './components/Mail/Mail';
 import { makeStyles } from "@material-ui/core/styles";
 
 
@@ -43,6 +44,7 @@ function AppRouter () {
             <Route path="/account" component={AccountInfo} />
             <Route path="/analysis" component={UserAnalysis} />
             <Route path="/pro-zone" component={ProZone} />
+            <Route path="/send-mail" component={Mail} />
           </Switch>
         </div>
       </Router>
