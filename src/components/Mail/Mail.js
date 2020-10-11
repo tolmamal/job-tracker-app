@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "../../utils/Material-UI/components";
 import { Button } from "@material-ui/core";
 import Icon from '@material-ui/core/Icon';
+import { EmailIcon } from "react-share";
 
 const useStyles = makeStyles((theme) => ({
     root: {
