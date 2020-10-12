@@ -146,10 +146,21 @@ const BasicDetails = (props) => {
         console.log("baiscDetails - sendMailHandler!");
         let data = {
             to_email: shareEmail,
-            // job_title: job_title,
-            // company: company_name,
-            // link: link,
+            job_title: title,
+            company: companyName,
+            link: url,
         };
+
+        emailjs.send(service_id, template_id, data, user_id).then(
+            function (response) {
+                addToast('Email on its way...', { appearance: 'success', autoDismiss: true });
+            },
+            function (err) {
+                addToast('Error occurred!' , { appearance: 'error', autoDismiss: true });
+            }
+        );
+
+        setExpanded(false);
     };
 
     return (
@@ -252,7 +263,7 @@ const BasicDetails = (props) => {
                                     onChange={e => setShareEmail(e.target.value)}
                                 />
                                 <ButtonGroup color="primary">
-                                    <Button>Cancel</Button>
+                                    <Button onClick={handlePanel('panel10')}>Cancel</Button>
                                     <Button onClick={sendMailHandler}>Send</Button>
                                 </ButtonGroup>
                             </div>
