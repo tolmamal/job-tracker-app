@@ -20,6 +20,10 @@ import EmailIcon from '@material-ui/icons/Email';
 import clsx from 'clsx';
 import emailjs from 'emailjs-com';
 
+const service_id = 'service_c31keur';
+const template_id = 'template_ryptxgx';
+const user_id = 'user_F8aQ79apN6EdlSqcIfuii';
+
 const useStyles = makeStyles((theme) => ({
     form: {
         display: 'flex',
@@ -134,9 +138,19 @@ const BasicDetails = (props) => {
         );
     };
 
+    const sendMailHandler = () => {
+        console.log("baiscDetails - sendMailHandler!");
+        let data = {
+            to_email: shareEmail,
+            // job_title: job_title,
+            // company: company_name,
+            // link: link,
+        };
+    };
+
     return (
         <Grid container xs={12} spacing={4}>
-            <Grid item xs={8}>
+            <Grid item xs={6}>
                 <Typography variant="h6" color="primary">
                     Basic Details
                 </Typography>
@@ -195,7 +209,7 @@ const BasicDetails = (props) => {
                 </form>
                 {updated ? <DirectToDashboard/> : null}
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
                 <div id="share-section" className={classes.shareSection}>
                     <Accordion expanded={expanded === 'panel1'} onChange={handlePanel('panel1')}>
                         <AccordionSummary
