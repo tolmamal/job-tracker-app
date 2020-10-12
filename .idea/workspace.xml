@@ -22,6 +22,7 @@
       <change beforePath="$PROJECT_DIR$/../burger-builder" beforeDir="false" afterPath="$PROJECT_DIR$/../burger-builder" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../code-interview" beforeDir="false" afterPath="$PROJECT_DIR$/../code-interview" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../job-tracker" beforeDir="false" afterPath="$PROJECT_DIR$/../job-tracker" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/ViewJob/BaiscDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ViewJob/BaiscDetails.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -62,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/ViewJob/BaiscDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+            <state relative-caret-position="228">
+              <caret line="255" column="68" selection-start-line="255" selection-start-column="68" selection-end-line="255" selection-end-column="68" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -74,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Navbar/Navbar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="108" column="40" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
+            <state relative-caret-position="114">
+              <caret line="102" column="22" lean-forward="true" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#462#504#0" expanded="true" />
@@ -162,10 +163,10 @@
         <option value="$PROJECT_DIR$/src/containers/TestContainer/TestContainer.js" />
         <option value="$PROJECT_DIR$/src/components/ProtectedRoute/ProtectedRoute.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/components/Navbar/Navbar.js" />
         <option value="$PROJECT_DIR$/src/utils/MailServer/MailServer.js" />
         <option value="$PROJECT_DIR$/src/components/Mail/Mail.js" />
         <option value="$PROJECT_DIR$/src/containers/Dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/src/components/Navbar/Navbar.js" />
         <option value="$PROJECT_DIR$/src/containers/ViewJob/BaiscDetails.js" />
       </list>
     </option>
@@ -297,12 +298,12 @@
       <workItem from="1601452831889" duration="6980000" />
       <workItem from="1601467776156" duration="26169000" />
       <workItem from="1601884442179" duration="1109000" />
-      <workItem from="1602407636833" duration="26874000" />
+      <workItem from="1602407636833" duration="27227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69440000" />
+    <option name="totallyTimeSpent" value="69793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -759,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Navbar/Navbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="108" column="40" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
+        <state relative-caret-position="114">
+          <caret line="102" column="22" lean-forward="true" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#462#504#0" expanded="true" />
@@ -770,8 +771,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/ViewJob/BaiscDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+        <state relative-caret-position="228">
+          <caret line="255" column="68" selection-start-line="255" selection-start-column="68" selection-end-line="255" selection-end-column="68" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

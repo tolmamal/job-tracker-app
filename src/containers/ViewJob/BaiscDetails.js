@@ -10,9 +10,8 @@ import {
     Accordion,
     AccordionDetails,
     AccordionSummary,
-    Divider,
-    ExpansionPanel,
-    Grid
+    Grid,
+    ButtonGroup,
 } from "@material-ui/core";
 import { Route, Redirect } from "react-router-dom";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -252,9 +251,11 @@ const BasicDetails = (props) => {
                                     value={shareEmail}
                                     onChange={e => setShareEmail(e.target.value)}
                                 />
-
+                                <ButtonGroup color="primary">
+                                    <Button>Cancel</Button>
+                                    <Button onClick={sendMailHandler}>Send</Button>
+                                </ButtonGroup>
                             </div>
-
                         </AccordionDetails>
                     </Accordion>
                 </div>
