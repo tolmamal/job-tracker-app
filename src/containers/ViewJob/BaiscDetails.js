@@ -217,12 +217,12 @@ const BasicDetails = (props) => {
                             id="share-panel-header"
                         >
                             <div className={classes.column}>
-                                <Typography variant="h3" color="primary">
+                                <Typography color="primary">
                                     Share with friends
                                 </Typography>
                             </div>
                             <div className={classes.column}>
-                                <Typography variant="h3" color="primary">
+                                <Typography color="primary">
                                     <EmailIcon />
                                 </Typography>
                             </div>
