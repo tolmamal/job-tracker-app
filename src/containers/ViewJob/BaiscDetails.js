@@ -7,7 +7,7 @@ import { useToasts } from 'react-toast-notifications';
 import { TextField } from '../../utils/Material-UI/import';
 import { Link } from "@material-ui/core";
 import { Route, Redirect } from "react-router-dom";
-import { Fab } from "@material-ui/core";
+import { Fab, Grid } from "@material-ui/core";
 import EmailIcon from '@material-ui/icons/Email';
 
 
@@ -110,15 +110,28 @@ const BasicDetails = (props) => {
 
     return (
         <div>
-            <Typography variant="h6" color="primary">
-                Basic Details
-            </Typography>
-            <div>
-                <Fab variant="extended">
-                    <EmailIcon className={classes.extendedIcon}/>
-                    Share
-                </Fab>
-            </div>
+            <Grid container xs={12} spacing={3}>
+                <Grid item xs={6}>
+                    <Typography variant="h6" color="primary">
+                        Basic Details
+                    </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Fab variant="extended">
+                        <EmailIcon className={classes.extendedIcon}/>
+                        Share
+                    </Fab>
+                </Grid>
+            </Grid>
+            {/*<Typography variant="h6" color="primary">*/}
+            {/*    Basic Details*/}
+            {/*</Typography>*/}
+            {/*<div>*/}
+            {/*    <Fab variant="extended">*/}
+            {/*        <EmailIcon className={classes.extendedIcon}/>*/}
+            {/*        Share*/}
+            {/*    </Fab>*/}
+            {/*</div>*/}
             <form className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.spaceBetween}>
                     <Input
