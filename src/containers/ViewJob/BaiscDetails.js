@@ -45,10 +45,10 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center'
     },
     shareSection: {
-        width: '100%'
+        width: '85%'
     },
     column: {
-        flexBasis: '33.33%',
+        flexBasis: '50%',
     },
     details: {
         alignItems: 'center',
@@ -225,12 +225,12 @@ const BasicDetails = (props) => {
                             id="share-panel-header"
                         >
                             <div className={classes.column}>
-                                <Typography>
+                                <Typography color="white">
                                     Share with friends
                                 </Typography>
                             </div>
                             <div className={classes.column}>
-                                <Typography>
+                                <Typography color="white">
                                     <EmailIcon />
                                 </Typography>
                             </div>
