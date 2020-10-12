@@ -7,12 +7,11 @@ import { useToasts } from 'react-toast-notifications';
 import { TextField } from '../../utils/Material-UI/import';
 import { Link } from "@material-ui/core";
 import { Route, Redirect } from "react-router-dom";
+import { Fab } from "@material-ui/core";
+import EmailIcon from '@material-ui/icons/Email';
 
 
-const useStyles = makeStyles(({
-    root: {
-
-    },
+const useStyles = makeStyles((theme) => ({
     form: {
         display: 'flex',
         flexDirection: 'column'
@@ -31,7 +30,11 @@ const useStyles = makeStyles(({
     },
     link: {
         textAlign: 'center'
-    }
+    },
+    extendedIcon: {
+        marginRight: theme.spacing(1),
+    },
+
 }));
 
 // TODO: add some function that checks input validation for all inputs
@@ -106,10 +109,16 @@ const BasicDetails = (props) => {
     };
 
     return (
-        <div className={classes.root}>
+        <div>
             <Typography variant="h6" color="primary">
                 Basic Details
             </Typography>
+            <div>
+                <Fab variant="extended">
+                    <EmailIcon className={classes.extendedIcon}/>
+                    Share
+                </Fab>
+            </div>
             <form className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.spaceBetween}>
                     <Input

@@ -118,7 +118,10 @@ const parseApplicationData = (appData) => {
         const {status, id, title, time} = application;
         const {company} = application;
         getLane(lanes, status).push({
-            id, title: <div style={{paddingTop: '10px', color: '#008B8B' }}>{title}</div>, label: time, description: company
+            id,
+            title: <div style={{paddingTop: '10px', color: '#008B8B' }}>{title}</div>,
+            label: time,
+            description: company
         });
     }
 
