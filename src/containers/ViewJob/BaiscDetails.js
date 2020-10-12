@@ -5,10 +5,20 @@ import { StatusMenu } from "../../components";
 import APIService from '../../utils/service/APIService';
 import { useToasts } from 'react-toast-notifications';
 import { TextField } from '../../utils/Material-UI/import';
-import { Link } from "@material-ui/core";
+import {
+    Link,
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Divider,
+    ExpansionPanel,
+    Grid
+} from "@material-ui/core";
 import { Route, Redirect } from "react-router-dom";
-
-
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import EmailIcon from '@material-ui/icons/Email';
+import clsx from 'clsx';
+import emailjs from 'emailjs-com';
 
 const useStyles = makeStyles((theme) => ({
     form: {
@@ -30,6 +40,19 @@ const useStyles = makeStyles((theme) => ({
     link: {
         textAlign: 'center'
     },
+    shareSection: {
+        width: '100%'
+    },
+    column: {
+        flexBasis: '33.33%',
+    },
+    details: {
+        alignItems: 'center',
+    },
+    helper: {
+        borderLeft: `2px solid ${theme.palette.divider}`,
+        padding: theme.spacing(1, 2),
+    },
 
 }));
 
@@ -47,6 +70,13 @@ const BasicDetails = (props) => {
     const [statusTime, setStatusTime] = useState(basicDetail.time || '');
     const [location, setLocation] = useState(basicDetail.location || '');
     const [updated, setUpdated] = useState(false);
+    const [shareEmail, setShareEmail] = useState('');
+    const [expanded, setExpanded] = useState(false);
+
+    const handlePanel = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+
+    };
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -103,6 +133,109 @@ const BasicDetails = (props) => {
             />
         );
     };
+
+    return (
+        <Grid container xs={12} spacing={4}>
+            <Grid item xs={8}>
+                <Typography variant="h6" color="primary">
+                    Basic Details
+                </Typography>
+                <form className={classes.form} onSubmit={submitHandler}>
+                    <div className={classes.spaceBetween}>
+                        <Input
+                            type="text"
+                            label="title"
+                            onChange={e => setTitle(e.target.value)}
+                            value={title}
+                        />
+                        <StatusMenu value={status} onChange={e => setStatus(e.target.value)} />
+                    </div>
+                    <Input
+                        type="text"
+                        label="Job post url"
+                        onChange={e => setUrl(e.target.value)}
+                        value={url}
+                    />
+                    {url ? <DisplayUrl/> : null}
+                    <Input
+                        type="text"
+                        label="description"
+                        multiline
+                        rows="4"
+                        onChange={e => setDescription(e.target.value)}
+                        value={description}
+                    />
+                    <Input
+                        type="text"
+                        label="location"
+                        onChange={e => setLocation(e.target.value)}
+                        value={location}
+                    />
+                    {statusTime !== '' && statusTime !== undefined ? <DisplayTime /> : null}
+                    <Typography variant="h6" color="primary">
+                        Company Details
+                    </Typography>
+                    <div className={classes.spaceBetween}>
+                        <Input
+                            type="text"
+                            label="company name"
+                            onChange={e => setCompanyName(e.target.value)}
+                            value={companyName}
+                        />
+                        <Input
+                            type="text"
+                            label="company link"
+                            onChange={e => setCompanyUrl(e.target.value)}
+                            value={companyUrl}
+                        />
+                    </div>
+                    <div className={classes.displayFlex}>
+                        <Button type="submit" style={{ marginTop: '20px', marginBottom: '5px' }}>Update</Button>
+                    </div>
+                </form>
+                {updated ? <DirectToDashboard/> : null}
+            </Grid>
+            <Grid item xs={4}>
+                <div id="share-section" className={classes.shareSection}>
+                    <Accordion expanded={expanded === 'panel1'} onChange={handlePanel('panel1')}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            id="share-panel-header"
+                        >
+                            <div className={classes.column}>
+                                <Typography variant="h3" color="primary">
+                                    Share with friends
+                                </Typography>
+                            </div>
+                            <div className={classes.column}>
+                                <Typography variant="h3" color="primary">
+                                    <EmailIcon />
+                                </Typography>
+                            </div>
+                        </AccordionSummary>
+                        <AccordionDetails className={classes.details}>
+                            <div className={clsx(classes.column, classes.helper)}>
+                                <Typography variant="caption">
+                                    Email to:
+                                </Typography>
+                                <TextField
+                                    label="Email"
+                                    id="email-share-input"
+                                    variant="outlined"
+                                    size="small"
+                                    margin="dense"
+                                    value={shareEmail}
+                                    onChange={e => setShareEmail(e.target.value)}
+                                />
+
+                            </div>
+
+                        </AccordionDetails>
+                    </Accordion>
+                </div>
+            </Grid>
+        </Grid>
+    );
 
     return (
         <div>
@@ -163,6 +296,43 @@ const BasicDetails = (props) => {
                 </div>
             </form>
             {updated ? <DirectToDashboard/> : null}
+            <div id="share-section" className={classes.shareSection}>
+                <Accordion expanded={expanded === 'panel1'} onChange={handlePanel('panel1')}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        id="share-panel-header"
+                    >
+                        <div className={classes.column}>
+                            <Typography variant="h3" color="primary">
+                                Share with friends
+                            </Typography>
+                        </div>
+                        <div className={classes.column}>
+                            <Typography variant="h3" color="primary">
+                                <EmailIcon />
+                            </Typography>
+                        </div>
+                    </AccordionSummary>
+                    <AccordionDetails className={classes.details}>
+                        <div className={clsx(classes.column, classes.helper)}>
+                            <Typography variant="caption">
+                                Email to:
+                            </Typography>
+                            <TextField
+                                label="Email"
+                                id="email-share-input"
+                                variant="outlined"
+                                size="small"
+                                margin="dense"
+                                value={shareEmail}
+                                onChange={e => setShareEmail(e.target.value)}
+                            />
+
+                        </div>
+
+                    </AccordionDetails>
+                </Accordion>
+            </div>
         </div>
     );
 };

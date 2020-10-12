@@ -229,7 +229,7 @@ const Dashboard = () => {
         setBoardData(parsedData);
     };
 
-    const preventDefault = (event) => event.preventDefault();
+    // const preventDefault = (event) => event.preventDefault();
 
     return (
         <div>
