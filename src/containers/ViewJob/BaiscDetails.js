@@ -128,7 +128,7 @@ const BasicDetails = (props) => {
                         Basic Details
                     </Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={6} className={classes.share}>
                     <Chip
                         icon={<EmailIcon />}
                         label="SHARE"
