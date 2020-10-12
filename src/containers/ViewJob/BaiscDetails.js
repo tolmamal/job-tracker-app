@@ -45,10 +45,10 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center'
     },
     shareSection: {
-        width: '85%'
+        width: '60%'
     },
     column: {
-        flexBasis: '50%',
+        flexBasis: '60%',
     },
     details: {
         alignItems: 'center',
@@ -224,8 +224,8 @@ const BasicDetails = (props) => {
                             expandIcon={<ExpandMoreIcon />}
                             id="share-panel-header"
                         >
-                            <Grid container xs={12}>
-                                <Grid item xs={10}>
+                            <Grid container xs={8}>
+                                <Grid item xs={6}>
                                     <Typography>
                                         Share with friends
                                     </Typography>
