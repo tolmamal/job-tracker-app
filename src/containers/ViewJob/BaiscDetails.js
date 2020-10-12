@@ -57,6 +57,10 @@ const useStyles = makeStyles((theme) => ({
         borderLeft: `2px solid ${theme.palette.divider}`,
         padding: theme.spacing(1, 2),
     },
+    Accordion: {
+        backgroundColor: theme.palette.primary.main,
+    }
+
 
 }));
 
@@ -211,18 +215,22 @@ const BasicDetails = (props) => {
             </Grid>
             <Grid item xs={6}>
                 <div id="share-section" className={classes.shareSection}>
-                    <Accordion expanded={expanded === 'panel1'} onChange={handlePanel('panel1')}>
+                    <Accordion
+                        expanded={expanded === 'panel1'}
+                        onChange={handlePanel('panel1')}
+                        className={classes.Accordion}
+                    >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             id="share-panel-header"
                         >
                             <div className={classes.column}>
-                                <Typography color="primary">
+                                <Typography>
                                     Share with friends
                                 </Typography>
                             </div>
                             <div className={classes.column}>
-                                <Typography color="primary">
+                                <Typography>
                                     <EmailIcon />
                                 </Typography>
                             </div>
