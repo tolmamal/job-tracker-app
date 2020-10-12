@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
     },
     Accordion: {
         backgroundColor: theme.palette.primary.main,
+        marginTop: '70px'
     }
 
 
