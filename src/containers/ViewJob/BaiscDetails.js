@@ -7,7 +7,7 @@ import { useToasts } from 'react-toast-notifications';
 import { TextField } from '../../utils/Material-UI/import';
 import { Link } from "@material-ui/core";
 import { Route, Redirect } from "react-router-dom";
-import { Fab, Grid } from "@material-ui/core";
+import { Fab, Grid, Chip } from "@material-ui/core";
 import EmailIcon from '@material-ui/icons/Email';
 
 
@@ -34,6 +34,14 @@ const useStyles = makeStyles((theme) => ({
     extendedIcon: {
         marginRight: theme.spacing(1),
     },
+    share: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        '& > *': {
+            margin: theme.spacing(0.5),
+        },
+    }
 
 }));
 
@@ -108,6 +116,10 @@ const BasicDetails = (props) => {
         );
     };
 
+    const shareHandler = () => {
+        console.log("shareHandler!");
+    };
+
     return (
         <div>
             <Grid container xs={12} spacing={3}>
@@ -117,10 +129,13 @@ const BasicDetails = (props) => {
                     </Typography>
                 </Grid>
                 <Grid item xs={6}>
-                    <Fab variant="extended">
-                        <EmailIcon className={classes.extendedIcon}/>
-                        Share
-                    </Fab>
+                    <Chip
+                        icon={<EmailIcon />}
+                        label="SHARE"
+                        clickable
+                        color="primary"
+                        onClick={shareHandler}
+                    />
                 </Grid>
             </Grid>
             {/*<Typography variant="h6" color="primary">*/}
