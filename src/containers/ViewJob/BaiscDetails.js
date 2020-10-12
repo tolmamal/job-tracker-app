@@ -7,9 +7,8 @@ import { useToasts } from 'react-toast-notifications';
 import { TextField } from '../../utils/Material-UI/import';
 import { Link } from "@material-ui/core";
 import { Route, Redirect } from "react-router-dom";
-import { Fab, Grid, Chip } from "@material-ui/core";
-import EmailIcon from '@material-ui/icons/Email';
-import emailjs from 'emailjs-com';
+
+
 
 const useStyles = makeStyles((theme) => ({
     form: {
@@ -31,21 +30,10 @@ const useStyles = makeStyles((theme) => ({
     link: {
         textAlign: 'center'
     },
-    share: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-        '& > *': {
-            margin: theme.spacing(0.5),
-        },
-    },
-    shareChip: {
-        margin: '10px'
-    }
 
 }));
 
-// TODO: add some function that checks input validation for all inputs
+
 const BasicDetails = (props) => {
     const classes = useStyles();
     const { addToast } = useToasts();
@@ -116,38 +104,11 @@ const BasicDetails = (props) => {
         );
     };
 
-    const shareHandler = () => {
-        console.log("shareHandler!");
-    };
-
     return (
         <div>
-            <Grid container xs={12} spacing={3}>
-                <Grid item xs={6}>
-                    <Typography variant="h6" color="primary">
-                        Basic Details
-                    </Typography>
-                </Grid>
-                <Grid item xs={6} className={classes.share}>
-                    <Chip
-                        className={classes.shareChip}
-                        icon={<EmailIcon />}
-                        label="SHARE"
-                        clickable
-                        color="primary"
-                        onClick={shareHandler}
-                    />
-                </Grid>
-            </Grid>
-            {/*<Typography variant="h6" color="primary">*/}
-            {/*    Basic Details*/}
-            {/*</Typography>*/}
-            {/*<div>*/}
-            {/*    <Fab variant="extended">*/}
-            {/*        <EmailIcon className={classes.extendedIcon}/>*/}
-            {/*        Share*/}
-            {/*    </Fab>*/}
-            {/*</div>*/}
+            <Typography variant="h6" color="primary">
+                Basic Details
+            </Typography>
             <form className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.spaceBetween}>
                     <Input
