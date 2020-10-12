@@ -9,7 +9,7 @@ import { Link } from "@material-ui/core";
 import { Route, Redirect } from "react-router-dom";
 import { Fab, Grid, Chip } from "@material-ui/core";
 import EmailIcon from '@material-ui/icons/Email';
-
+import emailjs from 'emailjs-com';
 
 const useStyles = makeStyles((theme) => ({
     form: {
@@ -31,9 +31,6 @@ const useStyles = makeStyles((theme) => ({
     link: {
         textAlign: 'center'
     },
-    extendedIcon: {
-        marginRight: theme.spacing(1),
-    },
     share: {
         display: 'flex',
         justifyContent: 'center',
@@ -41,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
             margin: theme.spacing(0.5),
         },
+    },
+    shareChip: {
+        margin: '10px'
     }
 
 }));
@@ -130,6 +130,7 @@ const BasicDetails = (props) => {
                 </Grid>
                 <Grid item xs={6} className={classes.share}>
                     <Chip
+                        className={classes.shareChip}
                         icon={<EmailIcon />}
                         label="SHARE"
                         clickable
