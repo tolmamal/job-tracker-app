@@ -224,16 +224,18 @@ const BasicDetails = (props) => {
                             expandIcon={<ExpandMoreIcon />}
                             id="share-panel-header"
                         >
-                            <div className={classes.column}>
-                                <Typography color="white">
-                                    Share with friends
-                                </Typography>
-                            </div>
-                            <div className={classes.column}>
-                                <Typography color="white">
-                                    <EmailIcon />
-                                </Typography>
-                            </div>
+                            <Grid container xs={12}>
+                                <Grid item xs={10}>
+                                    <Typography>
+                                        Share with friends
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <Typography>
+                                        <EmailIcon />
+                                    </Typography>
+                                </Grid>
+                            </Grid>
                         </AccordionSummary>
                         <AccordionDetails className={classes.details}>
                             <div className={clsx(classes.column, classes.helper)}>
