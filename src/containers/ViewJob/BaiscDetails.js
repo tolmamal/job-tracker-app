@@ -266,7 +266,6 @@ const BasicDetails = (props) => {
                                 <Typography variant="caption">
                                     Email to:
                                 </Typography>
-                                <form>
                                     <TextField
                                         className={classes.mailInput}
                                         label="Email"
@@ -277,7 +276,6 @@ const BasicDetails = (props) => {
                                         value={shareEmail}
                                         onChange={e => setShareEmail(e.target.value)}
                                     />
-                                </form>
                                 <ButtonGroup color="primary">
                                     <Button onClick={handlePanel('panel10')}>Cancel</Button>
                                     <Button onClick={sendMailHandler}>Send</Button>
