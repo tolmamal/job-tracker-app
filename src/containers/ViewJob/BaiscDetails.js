@@ -266,7 +266,7 @@ const BasicDetails = (props) => {
                                 <Typography variant="caption">
                                     Email to:
                                 </Typography>
-                                <form className={classes.shareForm}>
+                                <form>
                                     <TextField
                                         className={classes.mailInput}
                                         label="Email"
