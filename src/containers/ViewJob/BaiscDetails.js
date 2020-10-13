@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(1, 2),
     },
     Accordion: {
-        // backgroundColor: theme.palette.primary.main,
+        backgroundColor: theme.palette.primary.main,
         marginTop: '70px'
     },
     shareTitle: {
@@ -248,7 +248,6 @@ const BasicDetails = (props) => {
                         className={classes.Accordion}
                     >
                         <AccordionSummary
-                            className={classes.shareHeader}
                             expandIcon={<ExpandMoreIcon />}
                             id="share-panel-header"
                         >
@@ -267,9 +266,9 @@ const BasicDetails = (props) => {
                         </AccordionSummary>
                         <AccordionDetails className={classes.details}>
                             <div className={clsx(classes.column, classes.helper)}>
-                                <Typography variant="caption">
-                                    Email to:
-                                </Typography>
+                                {/*<Typography variant="caption">*/}
+                                {/*    Email to:*/}
+                                {/*</Typography>*/}
                                 <TextField
                                     className={classes.mailInput}
                                     type="text"
