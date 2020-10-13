@@ -71,6 +71,9 @@ const useStyles = makeStyles((theme) => ({
             margin: theme.spacing(1),
             width: 200,
         },
+    },
+    mailInput: {
+        backgroundColor: 'lightcyan',
     }
 }));
 
@@ -265,6 +268,7 @@ const BasicDetails = (props) => {
                                 </Typography>
                                 <form className={classes.shareForm}>
                                     <TextField
+                                        className={classes.mailInput}
                                         label="Email"
                                         required
                                         id="email-share-input"
