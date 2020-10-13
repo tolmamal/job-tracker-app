@@ -274,7 +274,6 @@ const BasicDetails = (props) => {
                                         id="email-share-input"
                                         variant="outlined"
                                         size="small"
-                                        margin="dense"
                                         value={shareEmail}
                                         onChange={e => setShareEmail(e.target.value)}
                                     />
