@@ -59,9 +59,13 @@ const useStyles = makeStyles((theme) => ({
     Accordion: {
         backgroundColor: theme.palette.primary.main,
         marginTop: '70px'
-    }
-
-
+    },
+    shareTitle: {
+        whiteSpace: 'nowrap'
+    },
+    shareIcon: {
+        marginLeft: '111px'
+    },
 }));
 
 
@@ -237,12 +241,12 @@ const BasicDetails = (props) => {
                         >
                             <Grid container xs={8}>
                                 <Grid item xs={6}>
-                                    <Typography style={{ whiteSpace: 'nowrap' }}>
+                                    <Typography className={classes.shareTitle}>
                                         Share with friends
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={2}>
-                                    <Typography style={{ marginLeft: '111px' }}>
+                                    <Typography className={classes.shareIcon}>
                                         <EmailIcon />
                                     </Typography>
                                 </Grid>
@@ -275,104 +279,7 @@ const BasicDetails = (props) => {
         </Grid>
     );
 
-    return (
-        <div>
-            <Typography variant="h6" color="primary">
-                Basic Details
-            </Typography>
-            <form className={classes.form} onSubmit={submitHandler}>
-                <div className={classes.spaceBetween}>
-                    <Input
-                        type="text"
-                        label="title"
-                        onChange={e => setTitle(e.target.value)}
-                        value={title}
-                    />
-                    <StatusMenu value={status} onChange={e => setStatus(e.target.value)} />
-                </div>
-                <Input
-                    type="text"
-                    label="Job post url"
-                    onChange={e => setUrl(e.target.value)}
-                    value={url}
-                />
-                {url ? <DisplayUrl/> : null}
-                <Input
-                    type="text"
-                    label="description"
-                    multiline
-                    rows="4"
-                    onChange={e => setDescription(e.target.value)}
-                    value={description}
-                />
-                <Input
-                    type="text"
-                    label="location"
-                    onChange={e => setLocation(e.target.value)}
-                    value={location}
-                />
-                {statusTime !== '' && statusTime !== undefined ? <DisplayTime /> : null}
-                <Typography variant="h6" color="primary">
-                    Company Details
-                </Typography>
-                <div className={classes.spaceBetween}>
-                    <Input
-                        type="text"
-                        label="company name"
-                        onChange={e => setCompanyName(e.target.value)}
-                        value={companyName}
-                    />
-                    <Input
-                        type="text"
-                        label="company link"
-                        onChange={e => setCompanyUrl(e.target.value)}
-                        value={companyUrl}
-                    />
-                </div>
-                <div className={classes.displayFlex}>
-                    <Button type="submit" style={{ marginTop: '20px', marginBottom: '5px' }}>Update</Button>
-                </div>
-            </form>
-            {updated ? <DirectToDashboard/> : null}
-            <div id="share-section" className={classes.shareSection}>
-                <Accordion expanded={expanded === 'panel1'} onChange={handlePanel('panel1')}>
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        id="share-panel-header"
-                    >
-                        <div className={classes.column}>
-                            <Typography variant="h3" color="primary">
-                                Share with friends
-                            </Typography>
-                        </div>
-                        <div className={classes.column}>
-                            <Typography variant="h3" color="primary">
-                                <EmailIcon />
-                            </Typography>
-                        </div>
-                    </AccordionSummary>
-                    <AccordionDetails className={classes.details}>
-                        <div className={clsx(classes.column, classes.helper)}>
-                            <Typography variant="caption">
-                                Email to:
-                            </Typography>
-                            <TextField
-                                label="Email"
-                                id="email-share-input"
-                                variant="outlined"
-                                size="small"
-                                margin="dense"
-                                value={shareEmail}
-                                onChange={e => setShareEmail(e.target.value)}
-                            />
 
-                        </div>
-
-                    </AccordionDetails>
-                </Accordion>
-            </div>
-        </div>
-    );
 };
 
 export default BasicDetails;
