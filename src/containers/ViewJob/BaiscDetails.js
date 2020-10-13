@@ -237,12 +237,12 @@ const BasicDetails = (props) => {
                         >
                             <Grid container xs={8}>
                                 <Grid item xs={6}>
-                                    <Typography>
+                                    <Typography style={{ whiteSpace: 'nowrap' }}>
                                         Share with friends
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={2}>
-                                    <Typography>
+                                    <Typography style={{ marginLeft: '111px' }}>
                                         <EmailIcon />
                                     </Typography>
                                 </Grid>
@@ -255,6 +255,7 @@ const BasicDetails = (props) => {
                                 </Typography>
                                 <TextField
                                     label="Email"
+                                    required
                                     id="email-share-input"
                                     variant="outlined"
                                     size="small"
