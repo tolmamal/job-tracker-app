@@ -267,6 +267,7 @@ const BasicDetails = (props) => {
                                     Email to:
                                 </Typography>
                                 <Input
+                                    className={classes.mailInput}
                                     type="text"
                                     label="Email"
                                     required
