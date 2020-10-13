@@ -268,6 +268,7 @@ const BasicDetails = (props) => {
                                 </Typography>
                                     <TextField
                                         className={classes.mailInput}
+                                        type="text"
                                         label="Email"
                                         required
                                         id="email-share-input"

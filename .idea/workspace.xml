@@ -62,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/ViewJob/BaiscDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="277" column="38" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
+            <state relative-caret-position="320">
+              <caret line="270" column="50" selection-start-line="270" selection-start-column="50" selection-end-line="270" selection-end-column="50" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -302,12 +302,12 @@
       <workItem from="1601452831889" duration="6980000" />
       <workItem from="1601467776156" duration="26169000" />
       <workItem from="1601884442179" duration="1109000" />
-      <workItem from="1602407636833" duration="31786000" />
+      <workItem from="1602407636833" duration="32091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74352000" />
+    <option name="totallyTimeSpent" value="74657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -775,8 +775,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/ViewJob/BaiscDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="277" column="38" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
+        <state relative-caret-position="320">
+          <caret line="270" column="50" selection-start-line="270" selection-start-column="50" selection-end-line="270" selection-end-column="50" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
