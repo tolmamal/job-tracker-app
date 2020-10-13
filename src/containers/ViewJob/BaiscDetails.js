@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(1, 2),
     },
     Accordion: {
-        backgroundColor: theme.palette.primary.main,
+        // backgroundColor: theme.palette.primary.main,
         marginTop: '70px'
     },
     shareTitle: {
@@ -266,26 +266,17 @@ const BasicDetails = (props) => {
                                 <Typography variant="caption">
                                     Email to:
                                 </Typography>
-                                <Input
+                                <TextField
                                     className={classes.mailInput}
                                     type="text"
                                     label="Email"
                                     required
                                     id="email-share-input"
+                                    variant="outlined"
+                                    size="small"
                                     value={shareEmail}
                                     onChange={e => setShareEmail(e.target.value)}
                                 />
-                                    {/*<TextField*/}
-                                    {/*    className={classes.mailInput}*/}
-                                    {/*    type="text"*/}
-                                    {/*    label="Email"*/}
-                                    {/*    required*/}
-                                    {/*    id="email-share-input"*/}
-                                    {/*    variant="outlined"*/}
-                                    {/*    size="small"*/}
-                                    {/*    value={shareEmail}*/}
-                                    {/*    onChange={e => setShareEmail(e.target.value)}*/}
-                                    {/*/>*/}
                                 <ButtonGroup color="primary">
                                     <Button onClick={handlePanel('panel10')}>Cancel</Button>
                                     <Button onClick={sendMailHandler}>Send</Button>
