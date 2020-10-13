@@ -266,11 +266,7 @@ const BasicDetails = (props) => {
                         </AccordionSummary>
                         <AccordionDetails className={classes.details}>
                             <div className={clsx(classes.column, classes.helper)}>
-                                {/*<Typography variant="caption">*/}
-                                {/*    Email to:*/}
-                                {/*</Typography>*/}
                                 <TextField
-                                    className={classes.mailInput}
                                     type="text"
                                     label="Email"
                                     required
