@@ -74,6 +74,9 @@ const useStyles = makeStyles((theme) => ({
     },
     mailInput: {
         backgroundColor: 'lightcyan',
+    },
+    shareHeader: {
+        backgroundColor: theme.palette.primary.main
     }
 }));
 
@@ -245,6 +248,7 @@ const BasicDetails = (props) => {
                         className={classes.Accordion}
                     >
                         <AccordionSummary
+                            className={classes.shareHeader}
                             expandIcon={<ExpandMoreIcon />}
                             id="share-panel-header"
                         >
