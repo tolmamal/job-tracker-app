@@ -30,7 +30,6 @@ const Mail = () => {
     const [email, setEmail] = useState('');
 
     const sendMailHandler = () => {
-        console.log("sendMailHandler!");
         let data = {
             to_email:email,
             job_title: job_title,

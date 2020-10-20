@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import { Input, Button, Typography } from "../../utils/Material-UI/components";
 import { StatusMenu } from "../../components";
@@ -97,6 +98,9 @@ const BasicDetails = (props) => {
     const [shareEmail, setShareEmail] = useState('');
     const [expanded, setExpanded] = useState(false);
 
+    const auth = useSelector((state) => state.auth);
+    const {user: {user: {displayName} = {}}} = auth;
+
     const handlePanel = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
 
@@ -159,12 +163,12 @@ const BasicDetails = (props) => {
     };
 
     const sendMailHandler = () => {
-        console.log("baiscDetails - sendMailHandler!");
         let data = {
             to_email: shareEmail,
             job_title: title,
             company: companyName,
             link: url,
+            from: displayName
         };
 
         emailjs.send(service_id, template_id, data, user_id).then(

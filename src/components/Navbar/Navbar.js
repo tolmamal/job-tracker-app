@@ -101,14 +101,6 @@ const NavBar = props => {
                         textOverrideClass={{ primary: classes.textStyle }}
                         icon={<SettingsOutlinedIcon />}
                     />
-
-                    {/*<ListItemWithLink*/}
-                    {/*    primary="Send Mail"*/}
-                    {/*    to="/send-mail"*/}
-                    {/*    textOverrideClass={{ primary: classes.textStyle }}*/}
-                    {/*    icon={<EmailIcon />}*/}
-                    {/*/>*/}
-
                     <ListItemWithClick
                         primary="Logout"
                         onClick={logout}
