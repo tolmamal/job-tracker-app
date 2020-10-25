@@ -21,7 +21,7 @@ axiosInstance.interceptors.response.use(authInterceptor, errorHandler);
 
 
 const getJobApplications = (uid) => {
-    console.log("server - getJobApplications()    UID: " + uid);
+    console.log("server - getJobApplications()");
     const dest = `${API_URL}/applications/${uid}.json`;
     return axiosInstance.get(dest)
         .then(response => {
