@@ -218,9 +218,17 @@ const Dashboard = () => {
         console.log("maxDate: " + moment(maxDate).toDate());
         console.log("range: " + range);
 
+        if (minDate === maxDate) {
+            console.log("minDate === maxDate");
+        }
+
         applications.map((item) => {
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
+
             console.log("currentDate: " + currentDate);
+           if (moment(currentDate).within(range)) {
+               console.log("**** WITHIN MATCH ****    item.title: " + item.title + "    item.time: " + item.time);
+           }
             if (range.contains(currentDate)) {
                 console.log("**** MATCH ****    item.title: " + item.title + "    item.time: " + item.time);
                 itemsInRange.push(item);
