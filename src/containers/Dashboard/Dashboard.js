@@ -223,7 +223,7 @@ const Dashboard = () => {
         }
 
         applications.map((item) => {
-            if (item.time === minDate) {
+            if (new Date(item.time) === new Date(minDate)) {
                 console.log("YYYYYYYYYYYYYYYY");
             }
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
