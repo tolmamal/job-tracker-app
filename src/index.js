@@ -22,6 +22,7 @@ import { firebase as fbConfig, reduxFirebase as rfConfig } from "./utils/firebas
 firebase.initializeApp(fbConfig);
 
 
+
 const initialState = {};
 const store = createStore(initialState);
 

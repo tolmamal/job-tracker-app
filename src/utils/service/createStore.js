@@ -2,6 +2,7 @@ import { applyMiddleware, compose, createStore } from "redux";
 import thunk from 'redux-thunk';
 import { getFirebase } from "react-redux-firebase";
 import rootReducer from '../../store/reducers/rootReducer';
+import { verifyAuth } from "../../store/actions";
 
 const fbConfig = {
     apiKey: "AIzaSyAoHmxOtyOGf3YCVKL3MuTsGzkvGB-I2eU",
@@ -27,7 +28,9 @@ export default function configureStore(initialState) {
     )(createStore);
     const store = createStoreWithMiddleware(
         rootReducer,
+        // initialState,
         applyMiddleware(thunk)
     );
+    // store.dispatch(verifyAuth());
     return store;
 };

@@ -143,7 +143,6 @@ const Dashboard = () => {
     const auth = useSelector((state) => state.auth);
     const {user: {user: {uid} = {}}} = auth;
 
-
     const handlePanel = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
 
@@ -167,7 +166,6 @@ const Dashboard = () => {
     };
 
     const getJobApplications = () => {
-
         const applications = [];
         let userCompanies = [];
         APIService.getJobApplications(uid)
@@ -190,7 +188,6 @@ const Dashboard = () => {
     };
 
     useEffect(() => {
-
         getJobApplications();
 
     }, []);

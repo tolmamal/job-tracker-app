@@ -115,15 +115,20 @@ const updateError = (err) => {
 export const loginUser = (email, password) => dispatch => {
     console.log("authActions - loginUser()");
     dispatch(requestLogin());
-    firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
-        .then(user => {
-            dispatch(receiveLogin(user));
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+        .then(res => {
+            firebase
+                .auth()
+                .signInWithEmailAndPassword(email, password)
+                .then(user => {
+                    dispatch(receiveLogin(user));
+                })
+                .catch(err => {
+                    dispatch(loginError(err.message));
+                });
         })
-        .catch(err => {
-            dispatch(loginError(err.message));
-        });
+        .catch(err => console.log(err));
+
 };
 
 export const signupUser = (email, password, username) => dispatch =>  {

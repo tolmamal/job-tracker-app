@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Dashboard from './containers/Dashboard/Dashboard';
 import HomePage from './components/HomePage/HomePage';
 import Login from './containers/Registresion/Login/Login';
@@ -12,6 +12,8 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import UserAnalysis from './containers/UserAnalysis/UserAnalysis';
 import Mail from './components/Mail/Mail';
 import { makeStyles } from "@material-ui/core/styles";
+import { verifyAuth } from "./store/actions";
+
 
 
 const useStyles = makeStyles(() => ({
@@ -30,7 +32,17 @@ const useStyles = makeStyles(() => ({
 function AppRouter () {
   const classes = useStyles();
   const auth = useSelector(state => state.auth);
+  const user = useSelector((state) => state.user);
+  const {user: {user: {uid} = {}}} = auth;
   const { isAuthenticated, isVerifying } = auth;
+  const [firebaseInit, setFirebaseInit] = useState(false);
+  const dispatch = useDispatch();
+
+
+  // useEffect(() => {
+  //   dispatch(verifyAuth());
+  // }, []);
+
 
   return (
       <Router>
