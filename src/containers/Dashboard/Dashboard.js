@@ -223,13 +223,11 @@ const Dashboard = () => {
         }
 
         applications.map((item) => {
+            if (moment(minDate).isSame(item.time)) {
+                console.log("YYYYYYYYYYYYYYYY");
+            }
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
             console.log("currentDate: " + currentDate);
-
-            if (moment(currentDate).isSame(minDate)) {
-                console.log("currentDate isSame like minDate !");
-                console.log("item.title: " + item.title);
-            }
 
             if (range.contains(currentDate)) {
                 itemsInRange.push(item);
