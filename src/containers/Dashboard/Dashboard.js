@@ -220,13 +220,14 @@ const Dashboard = () => {
 
         if (minDate === maxDate) {
             console.log("minDate === maxDate");
+
         }
 
         applications.map((item) => {
-            if (new Date(item.time) === new Date(minDate)) {
-                console.log("YYYYYYYYYYYYYYYY");
-            }
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
+            if (minDate.toString() === item.time.toString()) {
+                console.log("!!! $$$ !!!");
+            }
             console.log("currentDate: " + currentDate);
 
             if (range.contains(currentDate)) {
