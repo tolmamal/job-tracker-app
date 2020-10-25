@@ -224,14 +224,14 @@ const Dashboard = () => {
 
         applications.map((item) => {
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
-
             console.log("currentDate: " + currentDate);
-            if (moment(currentDate).isSame(moment(minDate)) && moment(currentDate).isSame(moment(maxDate))) {
-                console.log("isSame!!!!    item.title: " + item.title + " item.time: " + item.time);
+
+            if (moment(currentDate).isSame(minDate)) {
+                console.log("currentDate isSame like minDate !");
+                console.log("item.title: " + item.title);
             }
 
             if (range.contains(currentDate)) {
-                console.log("**** MATCH ****    item.title: " + item.title + "    item.time: " + item.time);
                 itemsInRange.push(item);
             }
         });
