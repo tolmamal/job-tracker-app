@@ -22,6 +22,7 @@ import DateFnsUtils from '@date-io/date-fns';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import Moment from 'moment';
 import { extendMoment } from "moment-range";
+import firebase from "firebase";
 const moment = extendMoment(Moment);
 
 
@@ -142,8 +143,11 @@ const Dashboard = () => {
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
-    const auth = useSelector((state) => state.auth);
-    const {user: {user: {uid} = {}}} = auth;
+    // const auth = useSelector((state) => state.auth);
+
+    // const {user: {user: {uid} = {}}} = auth;
+
+    const {uid} = (firebase.auth().currentUser || {});
 
     const handlePanel = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);

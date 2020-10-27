@@ -8,6 +8,7 @@ import {NavLink} from "react-router-dom";
 import {
     Table, TableBody, TableCell, TableContainer, TableHead, TableRow
 } from '../../utils/Material-UI/import';
+import firebase from "firebase";
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -191,8 +192,7 @@ const parseData = (data) => {
 
 const UserAnalysis = () => {
     const classes = useStyles();
-    const auth = useSelector((state) => state.auth);
-    const {user: {user: {uid} = {}}} = auth;
+    const {uid} = (firebase.auth().currentUser || {});
     const userApplications = [];
     const [tableData, setTableData] = useState(initRows);
     let fixedRows = [];

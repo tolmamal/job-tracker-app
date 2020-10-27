@@ -26,7 +26,7 @@ const requestLogin = () => {
     };
 };
 
-const receiveLogin = user => {
+export const receiveLogin = user => {
     console.log("receiveLogin()");
     return {
         type: LOGIN_SUCCESS,
@@ -69,7 +69,7 @@ const verifyRequest = () => {
     };
 };
 
-const verifySuccess = () => {
+export const verifySuccess = () => {
     return {
         type: VERIFY_SUCCESS
     };
@@ -116,7 +116,7 @@ export const loginUser = (email, password) => dispatch => {
     console.log("authActions - loginUser()");
     dispatch(requestLogin());
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-        .then(res => {
+        .then(() => {
             firebase
                 .auth()
                 .signInWithEmailAndPassword(email, password)

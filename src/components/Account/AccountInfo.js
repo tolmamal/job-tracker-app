@@ -5,6 +5,7 @@ import { Typography, Button, Input } from "../../utils/Material-UI/components";
 import { makeStyles } from '../../utils/Material-UI/import';
 import { useToasts } from 'react-toast-notifications';
 import { updatePassword } from "../../store/actions";
+import firebase from "firebase";
 
 const useStyles = makeStyles((theme) => ({
     innerContainer: {
@@ -113,9 +114,8 @@ const ChangePassword = () => {
 
 const AccountInfo = () => {
     const classes = useStyles();
-    const auth = useSelector((state) => state.auth);
-    const {user: {user: {email} = {}}} = auth;
-    const {user: {user: {displayName} = {}}} = auth;
+
+    const {email, displayName} = (firebase.auth().currentUser || {});
 
     return (
         <NavBar>

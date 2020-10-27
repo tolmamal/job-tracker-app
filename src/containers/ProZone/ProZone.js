@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '../../utils/Material-UI/import';
-import { useSelector } from "react-redux";
 import APIService from '../../utils/service/APIService';
 import { useToasts } from 'react-toast-notifications';
 import Board from 'react-trello';
@@ -10,6 +9,7 @@ import { Typography } from "../../utils/Material-UI/components";
 import AddField from './AddField/AddField';
 //icons
 import { Add } from "@material-ui/icons";
+import firebase from "firebase";
 
 
 
@@ -68,8 +68,7 @@ const EmptyBoard = () => (
 const ProZone = () => {
     const classes = useStyles();
     const { addToast } = useToasts();
-    const auth = useSelector((state) => state.auth);
-    const {user: {user: {uid} = {}}} = auth;
+    const {uid} = (firebase.auth().currentUser || {});
     const [boardData, setBoardData] = useState(initData);
     const [openFieldAdd, setOpenFieldAdd] = useState(false);
 
