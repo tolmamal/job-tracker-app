@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     sectionStyle: {
         margin: 'auto',
         width: '60%',
+        fontSize: '19px',
         textAlign: 'center',
         marginTop: theme.spacing(7),
         '@media (max-width : 600px)': {
