@@ -33,9 +33,7 @@ const getJobApplications = (uid) => {
     const dest = `${API_URL}/applications/${uid}.json`;
     return axiosInstance.get(dest)
         .then(response => {
-            console.log(response.data);
             return response.data;
-
         })
         .catch(err => console.log(err));
 };

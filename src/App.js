@@ -32,8 +32,6 @@ const useStyles = makeStyles(() => ({
 function AppRouter() {
     const classes = useStyles();
     const auth = useSelector(state => state.auth);
-    const user = useSelector((state) => state.user);
-    const {user: {user: {uid} = {}}} = auth;
     const {isAuthenticated, isVerifying} = auth;
     const [firebaseInit, setFirebaseInit] = useState(false);
     const dispatch = useDispatch();

@@ -6,6 +6,7 @@ import { makeStyles } from '../../utils/Material-UI/import';
 import { Divider, List } from "../../utils/Material-UI/components";
 import ListItemWithLink from '../UI/ListItemWithLink/ListItemWithLink';
 import ListItemWithClick from '../UI/ListItemWithClick/ListItemWithClick';
+import firebase from "firebase";
 
 //icons
 import { Logo } from '../../assets/icons';
@@ -55,7 +56,7 @@ const NavBar = props => {
     const dispatch = useDispatch();
     const auth = useSelector((state) => state.auth);
     const { isLoggingOut, isAuthenticated } = auth;
-    const {user: {user: {uid} = {}}} = auth;
+    const {uid} = (firebase.auth().currentUser || {});
 
     if (isLoggingOut === false && isAuthenticated === false && uid === undefined) {
         document.location = '/';

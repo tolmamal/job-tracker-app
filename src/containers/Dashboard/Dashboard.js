@@ -143,9 +143,6 @@ const Dashboard = () => {
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
-    // const auth = useSelector((state) => state.auth);
-
-    // const {user: {user: {uid} = {}}} = auth;
 
     const {uid} = (firebase.auth().currentUser || {});
 

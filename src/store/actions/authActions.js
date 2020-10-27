@@ -138,7 +138,6 @@ export const signupUser = (email, password, username) => dispatch =>  {
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then(user => {
-            console.log(user);
             dispatch(receiveSignup(user));
             const currentUser = firebase.auth().currentUser;
             currentUser.updateProfile({
