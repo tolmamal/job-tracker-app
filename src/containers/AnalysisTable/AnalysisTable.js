@@ -309,6 +309,9 @@ const AnalysisTable = () => {
                 }
                 fixedRows = parseData(userApplications);
                 setTableData(fixedRows);
+
+                console.log("tableData.length: " + tableData.length);
+                console.log("tableData: " + JSON.stringify(tableData));
             })
             .catch();
     }, []);
