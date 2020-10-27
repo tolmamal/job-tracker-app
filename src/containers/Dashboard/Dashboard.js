@@ -214,10 +214,12 @@ const Dashboard = () => {
         const maxDate = endDate.setHours(23,59,0);
         const range = moment.range(minDate, maxDate);
 
-
+        console.log("minDate: " + minDate);
+        console.log("maxDate: " + maxDate);
 
         applications.map((item) => {
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
+            console.log("item.time:  " + item.time + "  currentDate: " + currentDate);
             if (range.contains(currentDate)) {
                 console.log("*** range MATCH!   item.title: " + item.title + "   ****");
                 itemsInRange.push(item);
