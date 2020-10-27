@@ -214,8 +214,8 @@ const Dashboard = () => {
         const maxDate = endDate.setHours(23,59,0);
         const range = moment.range(minDate, maxDate);
 
-        console.log("minDate: " + minDate);
-        console.log("maxDate: " + maxDate);
+        console.log("minDate: " + minDate.toDate());
+        console.log("maxDate: " + maxDate.toDate());
 
         applications.map((item) => {
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
