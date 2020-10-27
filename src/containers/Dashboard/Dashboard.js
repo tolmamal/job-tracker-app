@@ -137,6 +137,7 @@ const Dashboard = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [expanded, setExpanded] = useState(false);
+    const [filteredDashboard, setFilteredDashboard] = useState(false);
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
@@ -214,15 +215,12 @@ const Dashboard = () => {
         const maxDate = endDate.setHours(23,59,0);
         const range = moment.range(minDate, maxDate);
 
-        const start = moment(minDate, "DD/MM/YYYY").toDate();
-        const end = moment(maxDate, "DD/MM/YYYY").toDate();
 
         applications.map((item) => {
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
 
-            if (moment(start).isSame(currentDate)) {
-                console.log("MATCH!!!!");
-            }
+            console.log("if: currentDate === minDate" + currentDate === minDate);
+            console.log("if: currentDate === maxDate" + currentDate === maxDate);
 
             if (range.contains(currentDate)) {
                 console.log("*** range MATCH!   item.title: " + item.title + "   ****");
@@ -234,8 +232,6 @@ const Dashboard = () => {
         const parsedData = parseApplicationData(itemsInRange);
         setBoardData(parsedData);
     };
-
-    // const preventDefault = (event) => event.preventDefault();
 
     return (
         <div>
