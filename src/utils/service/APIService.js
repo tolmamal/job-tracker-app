@@ -1,4 +1,5 @@
 import axios from 'axios';
+import firebase from 'firebase';
 
 const API_URL = 'https://job-tracker-8e89e.firebaseio.com/';
 
@@ -6,6 +7,13 @@ const axiosInstance = axios.create({
     baseURL: `${API_URL}/`
 });
 
+axiosInstance.interceptors.request.use(async config => {
+    const idToken = await firebase.auth().currentUser.getIdToken();
+    config.url = `${config.url}?auth=${idToken}`;
+    return config;
+}, (error) => {
+    return Promise.reject(error)
+});
 
 const authInterceptor = response => response;
 const errorHandler = error => {
