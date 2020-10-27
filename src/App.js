@@ -10,7 +10,6 @@ import AccountInfo from './components/Account/AccountInfo';
 import ProZone from './containers/ProZone/ProZone';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import UserAnalysis from './containers/UserAnalysis/UserAnalysis';
-import AnalysisTable from './containers/AnalysisTable/AnalysisTable';
 import Mail from './components/Mail/Mail';
 import { makeStyles } from "@material-ui/core/styles";
 import { verifyAuth } from "./store/actions";
@@ -55,8 +54,7 @@ function AppRouter () {
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/application/:applicationId" component={ViewJob} />
             <Route path="/account" component={AccountInfo} />
-            {/*<Route path="/analysis" component={UserAnalysis} />*/}
-            <Route path="/analysis" component={AnalysisTable} />
+            <Route path="/analysis" component={UserAnalysis} />
             <Route path="/pro-zone" component={ProZone} />
             <Route path="/send-mail" component={Mail} />
           </Switch>
