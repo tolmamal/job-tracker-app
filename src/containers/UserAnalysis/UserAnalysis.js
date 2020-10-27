@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import APIService from '../../utils/service/APIService';
-import { withStyles, makeStyles } from "@material-ui/core";
+import { withStyles, makeStyles } from "@material-ui/styles";
+import { Grid } from "@material-ui/core";
 import { Typography } from "../../utils/Material-UI/components";
 import {NavLink} from "react-router-dom";
 import {
@@ -30,8 +31,7 @@ const StyledTableRow = withStyles((theme) => ({
 
 const useStyles = makeStyles((theme) => ({
     table: {
-        // minWidth: 700,
-        width: '90%'
+        minWidth: 700,
 
     },
     root: {
@@ -202,6 +202,18 @@ const UserAnalysis = () => {
             })
             .catch();
     }, []);
+
+    return (
+        <Grid container xs={12} spacing={2}>
+            <Grid item xs={12}>
+                ...BACK
+            </Grid>
+            <Grid item xs={12}>
+                ...TABLE
+            </Grid>
+        </Grid>
+
+    );
 
     return (
         <div className={classes.root}>
