@@ -137,6 +137,7 @@ const Dashboard = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [expanded, setExpanded] = useState(false);
+    //TODO: save this indicator in user's state (redux) in order to know if needs to load filtered dashboard
     const [filteredDashboard, setFilteredDashboard] = useState(false);
 
     const dispatch = useDispatch();
@@ -219,8 +220,12 @@ const Dashboard = () => {
         applications.map((item) => {
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
 
-            console.log("if: currentDate === minDate" + currentDate === minDate);
-            console.log("if: currentDate === maxDate" + currentDate === maxDate);
+            if (currentDate.getDate() === minDate) {
+                console.log("MATCH!!!!!!!!!   minDate = current");
+            }
+            if (currentDate.getDate() === maxDate) {
+                console.log("MATCH!!!!!!!!!   maxDate = current");
+            }
 
             if (range.contains(currentDate)) {
                 console.log("*** range MATCH!   item.title: " + item.title + "   ****");
