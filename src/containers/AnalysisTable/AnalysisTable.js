@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 import clsx from 'clsx';
 import { AutoSizer, Column, Table } from 'react-virtualized';
 import { withStyles, makeStyles } from "@material-ui/styles";
 import { Grid, Card, CardHeader, CardContent, Paper, TableCell } from "@material-ui/core";
+import APIService from '../../utils/service/APIService';
 
 const styles = (theme) => ({
     flexContainer: {
@@ -276,6 +277,24 @@ for (let i = 0; i < 200; i += 1) {
 
 const AnalysisTable = () => {
     const classes = useStyles();
+    const auth = useSelector((state) => state.auth);
+    const {user: {user: {uid} = {}}} = auth;
+    const userApplications = [];
+    const [tableData, setTableData] = useState(initRows);
+    let fixedRows = [];
+
+    useEffect(() => {
+        APIService.getUserAnalysisData(uid)
+            .then(response => {
+                for (let key in response.data) {
+                    userApplications.push(response.data[key]);
+                }
+                fixedRows = parseData(userApplications);
+                setTableData(fixedRows);
+            })
+            .catch();
+    }, []);
+
     return (
         <Grid container xs={12} spacing={2}>
             <Grid item xs={12}>
