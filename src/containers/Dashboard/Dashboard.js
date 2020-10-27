@@ -214,20 +214,14 @@ const Dashboard = () => {
         const maxDate = endDate.setHours(23,59,0);
         const range = moment.range(minDate, maxDate);
 
-        const start = moment(minDate, "DD-MM-YYYY");
-        const end = moment(maxDate, "DD-MM-YYYY");
-
-        console.log("start: " + start);
-        console.log("end: " + end);
-
-
+        const start = moment(minDate, "DD/MM/YYYY").toDate();
+        const end = moment(maxDate, "DD/MM/YYYY").toDate();
 
         applications.map((item) => {
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
-            const currentParsed = moment(currentDate, "DD-MM-YYYY");
 
-            if (start.isSame(currentParsed)) {
-                console.log("@@@ MATCH!!!!   item.title: " + item.title +  " @@@ ");
+            if (moment(start).isSame(currentDate)) {
+                console.log("MATCH!!!!");
             }
 
             if (range.contains(currentDate)) {
