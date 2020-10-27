@@ -9,6 +9,7 @@ import APIService from '../../utils/service/APIService';
 import Notes from './Notes/Notes';
 import TimeLog from './TimeLog/TimeLog';
 import BeatLoader from "react-spinners/BeatLoader";
+import firebase from "firebase";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -48,7 +49,7 @@ const ViewJob = (props) => {
     const classes = useStyles();
     const { match } = props;
     const { applicationId } = match.params;
-    const {uid} = props.location;
+    const {uid} = (firebase.auth().currentUser || {});
     const [basicDetail, setBasicDetail] = useState({});
     const [tab, setTab] = useState(0);
 
@@ -68,7 +69,7 @@ const ViewJob = (props) => {
         if (basicDetail.title === undefined) {
             loadData();
         }
-    });
+    }, []);
 
     const Body = () => (
         <div>
