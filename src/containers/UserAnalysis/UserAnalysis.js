@@ -211,55 +211,6 @@ const UserAnalysis = () => {
 
 
     return (
-        <Grid container xs={12} spacing={2}>
-            <Grid item xs={12}>
-                <Typography className={classes.typo} variant="h6">
-                    <NavLink to="/dashboard" className={classes.underLine}>Back</NavLink>
-                </Typography>
-            </Grid>
-            <Grid item xs={12}>
-                <Paper className={classes.paper}>
-                    <Card className={classes.card}>
-                        <CardHeader title="Self Analysis">
-
-                        </CardHeader>
-                        <CardContent>
-                            <Table aria-label="customized table">
-                                <TableHead>
-                                    <TableRow>
-                                        <StyledTableCell>Date</StyledTableCell>
-                                        <StyledTableCell align="right">Applied</StyledTableCell>
-                                        <StyledTableCell align="right">In Progress</StyledTableCell>
-                                        <StyledTableCell align="right">Interview</StyledTableCell>
-                                        <StyledTableCell align="right">Rejected</StyledTableCell>
-                                        <StyledTableCell align="right">Accepted</StyledTableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {tableData.map((row) => (
-                                        <StyledTableRow key={row.date}>
-                                            <StyledTableCell component="th" scope="row">
-                                                {row.date}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="right">{row.applied}</StyledTableCell>
-                                            <StyledTableCell align="right">{row.inprogress}</StyledTableCell>
-                                            <StyledTableCell align="right">{row.interview}</StyledTableCell>
-                                            <StyledTableCell align="right">{row.rejected}</StyledTableCell>
-                                            <StyledTableCell align="right">{row.accepted}</StyledTableCell>
-                                        </StyledTableRow>
-                                    ))}
-
-                                </TableBody>
-                            </Table>
-                        </CardContent>
-                    </Card>
-                </Paper>
-
-            </Grid>
-        </Grid>
-    );
-
-    return (
         <div className={classes.root}>
             <Typography className={classes.typo} variant="h6">
                 <NavLink to="/dashboard" className={classes.underLine}>Back</NavLink>
