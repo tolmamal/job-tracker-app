@@ -308,6 +308,7 @@ const AnalysisTable = () => {
                     userApplications.push(response.data[key]);
                 }
                 fixedRows = parseData(userApplications);
+                console.log("fixedRows : " + JSON.stringify(fixedRows));
                 setTableData(fixedRows);
 
                 console.log("tableData.length: " + tableData.length);
