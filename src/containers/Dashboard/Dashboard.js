@@ -211,7 +211,7 @@ const Dashboard = () => {
         const {applications = {}} = user;
 
         const minDate = startDate.setHours(0,0,0);
-        const maxDate = endDate.setHours(0,0,0);
+        const maxDate = endDate.setHours(23,59,0);
         const range = moment.range(minDate, maxDate);
 
 
@@ -219,6 +219,7 @@ const Dashboard = () => {
         applications.map((item) => {
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
             if (range.contains(currentDate)) {
+                console.log("*** range MATCH!   item.title: " + item.title + "   ****");
                 itemsInRange.push(item);
             }
         });
