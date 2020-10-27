@@ -202,18 +202,7 @@ const UserAnalysis = () => {
             })
             .catch();
     }, []);
-
-    return (
-        <Grid container xs={12} spacing={2}>
-            <Grid item xs={12}>
-                ...BACK
-            </Grid>
-            <Grid item xs={12}>
-                ...TABLE
-            </Grid>
-        </Grid>
-
-    );
+    
 
     return (
         <div className={classes.root}>
