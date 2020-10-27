@@ -53,8 +53,6 @@ function AppRouter() {
         return null;
     }
 
-
-
     return (
         <Router>
             <div className={classes.app}>
