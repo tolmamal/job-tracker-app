@@ -35,6 +35,7 @@
     "react-spinners": "^0.9.0",
     "react-toast-notifications": "^2.4.0",
     "react-trello": "^2.2.8",
+    "react-virtualized": "^9.22.2",
     "redux": "^4.0.5",
     "redux-firestore": "^0.13.0",
     "redux-thunk": "^2.3.0",
