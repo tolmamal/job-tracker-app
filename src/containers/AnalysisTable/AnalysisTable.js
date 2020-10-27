@@ -35,6 +35,12 @@ const styles = (theme) => ({
 
 });
 
+const useStyles = makeStyles((theme) => ({
+    card: {
+        height: 400,
+    }
+}));
+
 class MuiVirtualizedTable extends React.PureComponent {
     static defaultProps = {
         headerHeight: 48,
@@ -269,6 +275,7 @@ for (let i = 0; i < 200; i += 1) {
 
 
 const AnalysisTable = () => {
+    const classes = useStyles();
     return (
         <Grid container xs={12} spacing={2}>
             <Grid item xs={12}>
@@ -276,7 +283,7 @@ const AnalysisTable = () => {
             </Grid>
             <Grid item xs={12}>
                 <Paper style={{ height: 400, width: '100%' }}>
-                    <Card>
+                    <Card className={classes.card}>
                         <CardHeader title="Self Analysis"></CardHeader>
                         <CardContent>
                             <VirtualizedTable
