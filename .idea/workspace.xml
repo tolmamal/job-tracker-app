@@ -62,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/AnalysisTable/AnalysisTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="310" column="72" selection-start-line="310" selection-start-column="72" selection-end-line="310" selection-end-column="72" />
+            <state relative-caret-position="197">
+              <caret line="330" column="67" selection-start-line="330" selection-start-column="67" selection-end-line="330" selection-end-column="67" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -319,12 +319,12 @@
       <workItem from="1603177707498" duration="1999000" />
       <workItem from="1603351171921" duration="16006000" />
       <workItem from="1603461434099" duration="82000" />
-      <workItem from="1603619265102" duration="24089000" />
+      <workItem from="1603619265102" duration="24898000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120554000" />
+    <option name="totallyTimeSpent" value="121363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -790,8 +790,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AnalysisTable/AnalysisTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="310" column="72" selection-start-line="310" selection-start-column="72" selection-end-line="310" selection-end-column="72" />
+        <state relative-caret-position="197">
+          <caret line="330" column="67" selection-start-line="330" selection-start-column="67" selection-end-line="330" selection-end-column="67" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>

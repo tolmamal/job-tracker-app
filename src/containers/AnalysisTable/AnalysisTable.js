@@ -173,9 +173,6 @@ const rows = [
     createData('12/05/20', 0, 0, 0, 0)
 ];
 
-// function createData(id, dessert, calories, fat, carbs, protein) {
-//     return { id, dessert, calories, fat, carbs, protein };
-// }
 
 const createRows = (tableData) => {
     const rowsArray = [];
@@ -330,8 +327,8 @@ const AnalysisTable = () => {
                         <CardHeader title="Self Analysis"></CardHeader>
                         <CardContent>
                             <VirtualizedTable
-                                rowCount={rows.length}
-                                rowGetter={({ index }) => rows[index]}
+                                rowCount={tableData.length}
+                                rowGetter={({ index }) => tableData[index]}
                                 columns={[
                                     {
                                         minWidth: '15%',
