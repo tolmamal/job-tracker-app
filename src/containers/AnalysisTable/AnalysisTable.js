@@ -298,6 +298,9 @@ const AnalysisTable = () => {
     const [tableData, setTableData] = useState(initRows);
     let fixedRows = [];
 
+    console.log("tableData.length: " + tableData.length);
+    console.log("tableData: " + JSON.stringify(tableData));
+
     useEffect(() => {
         APIService.getUserAnalysisData(uid)
             .then(response => {
@@ -308,8 +311,7 @@ const AnalysisTable = () => {
                 console.log("fixedRows : " + JSON.stringify(fixedRows));
                 setTableData(fixedRows);
 
-                console.log("tableData.length: " + tableData.length);
-                console.log("tableData: " + JSON.stringify(tableData));
+
             })
             .catch();
     }, []);
