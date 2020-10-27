@@ -5,6 +5,8 @@ import { AutoSizer, Column, Table } from 'react-virtualized';
 import { withStyles, makeStyles } from "@material-ui/styles";
 import { Grid, Card, CardHeader, CardContent, Paper, TableCell } from "@material-ui/core";
 import APIService from '../../utils/service/APIService';
+import { Typography } from "../../utils/Material-UI/components";
+import { NavLink } from 'react-router-dom';
 
 const styles = (theme) => ({
     flexContainer: {
@@ -37,9 +39,25 @@ const styles = (theme) => ({
 });
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex',
+        flexGrow: 2,
+        width: '100%',
+        flexWrap: 'wrap'
+    },
     card: {
         height: 400,
-    }
+    },
+    underLine: {
+        borderBottom: `2px solid #5F9EA0`,
+        display: 'inline-block'
+    },
+    typo: {
+        margin: 'auto',
+        marginBottom: '30px',
+        marginTop: '10px'
+
+    },
 }));
 
 class MuiVirtualizedTable extends React.PureComponent {
@@ -296,9 +314,11 @@ const AnalysisTable = () => {
     }, []);
 
     return (
-        <Grid container xs={12} spacing={2}>
+        <Grid className={classes.root} container xs={12} spacing={2}>
             <Grid item xs={12}>
-                ...BACK
+                <Typography className={classes.typo} variant="h6">
+                    <NavLink to="/dashboard" className={classes.underLine}>Back</NavLink>
+                </Typography>
             </Grid>
             <Grid item xs={12}>
                 <Paper style={{ height: 400, width: '100%' }}>
