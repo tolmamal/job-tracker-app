@@ -216,21 +216,9 @@ const Dashboard = () => {
         const maxDate = endDate.setHours(23,59,0);
         const range = moment.range(minDate, maxDate);
 
-        const start = moment(startDate.setHours(0,0,0), 'DD-MM-YYYY HH:mm:ss');
-        const end = moment(endDate.setHours(23,59,0), 'DD-MM-YYYY HH:mm:ss');
-
-
         applications.map((item) => {
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
-            const currentParsed = moment((item.time).setHours(0,0,0), 'DD-MM-YYYY HH:mm:ss');
-            const timeRange = moment.range(start, end);
-
-            if (currentParsed.within(range)) {
-                console.log("MATCH!!!!");
-            }
-
             if (range.contains(currentDate)) {
-                console.log("*** range MATCH!   item.title: " + item.title + "   ****");
                 itemsInRange.push(item);
             }
 
