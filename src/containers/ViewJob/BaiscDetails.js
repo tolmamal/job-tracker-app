@@ -24,6 +24,10 @@ const service_id = 'service_c31keur';
 const template_id = 'template_ryptxgx';
 const user_id = 'user_F8aQ79apN6EdlSqcIfuii';
 
+const service_id_2 = 'service_8pjcof7';
+const template_id_2 = 'template_of81obd';
+const user_id_2 = 'user_6WqDgJdIhM6qMFozQx6YJ';
+
 const useStyles = makeStyles((theme) => ({
     form: {
         display: 'flex',
@@ -171,7 +175,7 @@ const BasicDetails = (props) => {
             from: displayName
         };
 
-        emailjs.send(service_id, template_id, data, user_id).then(
+        emailjs.send(service_id_2, template_id_2, data, user_id_2).then(
             function (response) {
                 addToast('Email on its way...', { appearance: 'success', autoDismiss: true });
             },
