@@ -15,6 +15,7 @@ import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import { AssessmentOutlined } from "@material-ui/icons";
 import ExitToAppOutlined from '@material-ui/icons/ExitToAppOutlined';
 import WorkIcon from "@material-ui/icons/Work";
+import EqualizerIcon from '@material-ui/icons/Equalizer';
 
 const useStyles = makeStyles((theme) => ({
     nav: {
@@ -108,8 +109,6 @@ const NavBar = props => {
                         textOverrideClass={{ primary: classes.textStyle }}
                         icon={<ExitToAppOutlined />}
                     />
-
-
                 </List>
             </nav>
             <div className={classes.container}>

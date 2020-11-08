@@ -10,6 +10,8 @@ import AccountInfo from './components/Account/AccountInfo';
 import ProZone from './containers/ProZone/ProZone';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import UserAnalysis from './containers/UserAnalysis/UserAnalysis';
+import MainAnalysis from './containers/DataAnalysis/MainAnalysis';
+
 import Mail from './components/Mail/Mail';
 import {makeStyles} from "@material-ui/core/styles";
 import {receiveLogin, verifyAuth, verifySuccess} from "./store/actions";

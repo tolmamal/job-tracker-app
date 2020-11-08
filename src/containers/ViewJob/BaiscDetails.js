@@ -106,11 +106,6 @@ const BasicDetails = (props) => {
     const auth = useSelector((state) => state.auth);
     const {user: {displayName} = {}} = auth;
 
-
-    console.log("displayName: " + displayName);
-
-
-
     const handlePanel = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
 

@@ -7,7 +7,6 @@ import { ThemeProvider } from './utils/Material-UI/import';
 import theme from './utils/Material-UI/theme';
 import * as serviceWorker from './serviceWorker';
 import { ToastProvider } from 'react-toast-notifications';
-
 // Redux
 import { Provider } from 'react-redux';
 
