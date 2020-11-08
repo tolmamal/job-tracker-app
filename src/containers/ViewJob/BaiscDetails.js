@@ -104,7 +104,12 @@ const BasicDetails = (props) => {
     const [expanded, setExpanded] = useState(false);
 
     const auth = useSelector((state) => state.auth);
-    const {user: {user: {displayName} = {}}} = auth;
+    const {user: {displayName} = {}} = auth;
+
+
+    console.log("displayName: " + displayName);
+
+
 
     const handlePanel = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
@@ -175,8 +180,6 @@ const BasicDetails = (props) => {
             link: url,
             from: displayName
         };
-
-        console.log("displayName: " + displayName);
 
         emailjs.send(email_account_2.service_id, email_account_2.template_id, data, email_account_2.user_id)
             .then(
