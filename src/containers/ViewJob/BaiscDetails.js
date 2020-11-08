@@ -19,14 +19,15 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import EmailIcon from '@material-ui/icons/Email';
 import clsx from 'clsx';
 import emailjs from 'emailjs-com';
+import { email_account_1, email_account_2 } from "../../utils/service/emailService";
 
-const service_id = 'service_c31keur';
-const template_id = 'template_ryptxgx';
-const user_id = 'user_F8aQ79apN6EdlSqcIfuii';
-
-const service_id_2 = 'service_8pjcof7';
-const template_id_2 = 'template_of81obd';
-const user_id_2 = 'user_6WqDgJdIhM6qMFozQx6YJ';
+// const service_id = 'service_c31keur';
+// const template_id = 'template_ryptxgx';
+// const user_id = 'user_F8aQ79apN6EdlSqcIfuii';
+//
+// const service_id_2 = 'service_8pjcof7';
+// const template_id_2 = 'template_of81obd';
+// const user_id_2 = 'user_6WqDgJdIhM6qMFozQx6YJ';
 
 const useStyles = makeStyles((theme) => ({
     form: {
@@ -175,12 +176,16 @@ const BasicDetails = (props) => {
             from: displayName
         };
 
-        emailjs.send(service_id_2, template_id_2, data, user_id_2).then(
+
+        emailjs.send(email_account_2.service_id, email_account_2.template_id, data, email_account_2.user_id)
+            .then(
             function (response) {
                 addToast('Email on its way...', { appearance: 'success', autoDismiss: true });
+
             },
             function (err) {
                 addToast('Error occurred!' , { appearance: 'error', autoDismiss: true });
+
             }
         );
 
