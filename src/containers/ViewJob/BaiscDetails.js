@@ -176,6 +176,7 @@ const BasicDetails = (props) => {
             from: displayName
         };
 
+        console.log("displayName: " + displayName);
 
         emailjs.send(email_account_2.service_id, email_account_2.template_id, data, email_account_2.user_id)
             .then(
