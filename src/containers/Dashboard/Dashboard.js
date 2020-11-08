@@ -217,8 +217,17 @@ const Dashboard = () => {
         const maxDate = endDate.setHours(23,59,0);
         const range = moment.range(minDate, maxDate);
 
+        const min = moment(startDate).format("DD-MM-YYYY");
+        const max = moment(endDate).format("DD-MM-YYYY");
+
         applications.map((item) => {
             const currentDate = moment(item.time, "DD/MM/YYYY").toDate();
+            const current = moment(currentDate).format("DD-MM-YYYY");
+
+            if (moment(current).isSameOrAfter(min) && moment(current).isSame(max)) {
+                itemsInRange.push(item);
+            }
+
             if (range.contains(currentDate)) {
                 itemsInRange.push(item);
             }
